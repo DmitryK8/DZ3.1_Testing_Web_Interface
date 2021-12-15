@@ -14,7 +14,7 @@ public class CallbackTest {
         form.$("[data-test-id=name] input").setValue("Иванов Василий");
         form.$("[data-test-id=phone] input").setValue("+79270000000");
         form.$("[data-test-id=agreement]").click();
-        form.$("[data-test-id=submit]").click();
-        $(".alert-success").shouldHave(text("Ваша заявка успешно отправлена!"));
+        form.$("button").click();
+        $(".alert-success").shouldHave(text("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
     }
 }
