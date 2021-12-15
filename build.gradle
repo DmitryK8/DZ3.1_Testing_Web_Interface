@@ -6,12 +6,15 @@ group 'ru.netology'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 11
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+
     testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
     testImplementation 'com.codeborne:selenide:5.19.0'
 }
@@ -19,5 +22,5 @@ dependencies {
 test {
 
     useJUnitPlatform()
-
+    systemProperty 'Dselenide.headless', System.getProperty('Dselenide.headless')
 }
